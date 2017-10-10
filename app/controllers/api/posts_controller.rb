@@ -33,17 +33,18 @@ class Api::PostsController < ApplicationController
   end
 
   private
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    def post_params
-      params.require(:data).
-        permit(
-          attributes:[
-            :title,
-            :body
-          ]
-        )
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:data).
+      permit(
+        attributes:[
+          :title,
+          :body
+        ]
+      )
+  end
 end

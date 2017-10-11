@@ -21,10 +21,10 @@ class Api::CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update(comment_params)
-      render json @comment
+    if @comment.update(comments_params)
+      render json: @comment
     else
-      renser json: @comment.errors, status: :unprocessable_entity
+      render json: @comment.errors, status: :unprocessable_entity
     end
   end
 

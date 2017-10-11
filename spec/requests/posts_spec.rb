@@ -76,7 +76,7 @@ RSpec.describe "Posts API", type: :request do
           params: {
             data: {
               attributes: {
-                title: "The suahsuahsOdd Sister"
+                title: "The Old brother"
               }
             }
           }
@@ -86,7 +86,7 @@ RSpec.describe "Posts API", type: :request do
         expect(response.body).not_to be_empty
       end
 
-      it "returns status code 204" do
+      it "returns status code 200" do
         post.reload
         expect(response).to have_http_status(200)
       end

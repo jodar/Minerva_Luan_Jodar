@@ -1,24 +1,15 @@
-# README
+# Desenvolvimento do Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Foi adicionado nos controllers, `Posts` e `Comments`, autenticação para os
+endpoints. O único método que não requer autenticação é o `index` de
+ambos os `controllers`.
 
-Things you may want to cover:
+Para desenvolvimento da API fiz diversas pesquisas, principalmente para
+elaboração dos testes. No geral, para o desenvolvimento do sistema, me guiei
+basicamente por tutorias e artigos. Além disso, consegui por em prática
+algumas técnicas que aprende ao longo do projeto freela na qual trabalho.
 
-* Ruby version
+Para testar as Endpoints, utilizei POSTMAN e CURL.
+Também foi adicionado testes com RSpec: Testes de requests e models.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Nos testes, utilizei a gem FactoryGirl, Pry, Faker, shoulda-matchers...

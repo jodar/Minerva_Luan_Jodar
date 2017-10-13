@@ -1,4 +1,5 @@
 class Api::CommentsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_post
   before_action :set_post_comment, only: [:show, :update, :destroy]
 
@@ -11,9 +12,10 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    @post.comments.create!(comments_params)
+    @comment = @post.comments.create!(comments_params)
+    @comment.user_id = current_user.id
 
-    if @post.save
+    if @comment.save
       render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity

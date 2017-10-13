@@ -1,5 +1,4 @@
-ENV['RAILS_ENV'] ||= 'test'
-
+ENV['RAILS_ENV'] ||= 'test' 
 require File.expand_path('../../config/environment', __FILE__)
 
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -8,6 +7,7 @@ require 'rspec/rails'
 require 'spec_helper'
 require 'database_cleaner'
 require 'support/factory_girl'
+require 'faker'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

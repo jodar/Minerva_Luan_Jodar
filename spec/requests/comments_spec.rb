@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "Comments API", type: :request do
-  let!(:article) { create(:post) }
+  let!(:user)        { create(:user) }
+  let!(:article)     { create(:post, user: user) }
+  let(:auth_headers) { user.create_new_auth_token }
 
   describe "GET /api/posts/:posts_id/comments (#index)" do
-    let!(:comments) { create(:comment, post: article) }
+    let!(:comments) { create(:comment, post: article, user: user) }
 
     context "when post exists" do
       before { get "/api/posts/#{article.id}/comments" }
@@ -28,6 +30,8 @@ RSpec.describe "Comments API", type: :request do
 
     context "when post comment exists" do
       it "returns status code 200" do
+        ap user
+        ap auth_headers
         expect(response).to have_http_status(200)
       end
 

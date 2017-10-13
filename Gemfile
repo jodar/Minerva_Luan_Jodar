@@ -13,17 +13,16 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 # ActiveModel::Serializer implementation and Rails hooks
 gem 'active_model_serializers', '~> 0.10.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 #
 gem 'awesome_print'
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'devise_token_auth'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.6'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
